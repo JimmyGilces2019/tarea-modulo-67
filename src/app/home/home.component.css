@@ -1,0 +1,66 @@
+.contBx {
+    padding: 40px 100px;
+    margin-top: 60px;
+}
+
+header {
+    width: 100%;
+}
+
+.textBx {
+    margin-top: 20px;
+}
+
+.cards-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    padding: 10px 15px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 400ms;
+    color: #aaa;
+}
+
+.card a {
+    color: #aaa;
+}
+
+.card p {
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.content-top {
+    height: 80%;
+}
+
+.content-second {
+    height: 20%;
+    text-align: end;
+}
+
+.content-second a {
+    text-decoration: none;
+    transition: 400ms;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.23);
+}
+
+.card:hover h4 {
+    color: dodgerblue;
+}
+
+.card:hover div a {
+    background: dodgerblue;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+}

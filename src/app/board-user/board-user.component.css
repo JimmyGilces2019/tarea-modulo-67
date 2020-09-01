@@ -1,0 +1,74 @@
+.user-board {
+    margin-top: 80px;
+    padding: 10px 100px;
+}
+
+.code-zone {
+    background: black;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 450px;
+    margin: 10px auto;
+    color: #aaa;
+}
+
+.code-title {
+    background: rgb(172, 34, 10);
+    padding: 10px 15px;
+    color: #000;
+}
+
+.code-text {
+    padding: 10px 15px;
+}
+
+.prompt {
+    color: #fff;
+    padding-right: 10px;
+}
+
+.reserved-word {
+    color: green;
+    font-weight: bold;
+}
+
+.parameters {
+    color: #555;
+}
+
+.param-value {
+    color: rgb(255, 238, 0);
+}
+
+.img-zone {
+    display: flex;
+    justify-content: center;
+}
+
+.img-zone img {
+    border-radius: 5px;
+}
+
+.table-values {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 80%;
+}
+
+table tr th:nth-child(1) {
+    width: 20%;
+}
+
+table tr th,
+table tr td {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+table tr th {
+    text-align: center;
+    background: dodgerblue;
+}

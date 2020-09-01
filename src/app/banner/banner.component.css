@@ -1,0 +1,43 @@
+.banner {
+    position: relative;
+    min-height: 100vh;
+    background: url('src/assets/img/angular.jpg');
+    background-size: cover;
+    background-position: right;
+    display: flex;
+    padding: 40px 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner h2 {
+    font-size: 3em;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+.banner h2 span {
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.banner h3 {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.btn {
+    position: relative;
+    background: #f04c4c;
+    display: inline-block;
+    color: #fff;
+    margin-top: 20px;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+}

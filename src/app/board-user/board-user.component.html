@@ -1,5 +1,174 @@
-<div class="container">
-  <header class="jumbotron">
-    <p>{{ content }}</p>
-  </header>
+<div class="user-board animated fadeIn fast">
+    <section>
+        <div class="title">
+            <h2>Servicios</h2>
+        </div>
+        <hr>
+        <div class="content">
+            <p>
+                Los <b>servicios</b> en Angular nos permiten manejar la informacion que sera presentada un la aplicación web. Los servicios realizan consultas HTTP a WebServices Locales (Corporativos, propios de la empresa) o a APIs de algun servidor
+                externo a la nube que puede contener datos publicos como privados.
+            </p>
+            <p>
+                Para crear un servicio usando Angular CLI, usamos el siguente comando:
+            </p>
+            <div class="code-zone">
+                <div class="code-title">
+                    <h5>Servicio mediante CLI de Angular</h5>
+                </div>
+                <div class="code-text">
+                    <span class="prompt">>>></span> <span class="reserved-word">ng</span> <span class="parameters"> g s</span>
+                    <span class="param-value"> _services/DataServices</span>
+                </div>
+            </div>
+            <p>
+                Donde <b>_services</b> es la carpeta donde se creara el servicio y <b>DataServices</b> es el nombre del servicio en si. Una vez creado el servicio se puede observar la siguiente estructura:
+            </p>
+            <div class="img-zone">
+                <img src="../../assets/img/services1.png" alt="servicios_1">
+            </div>
+            <p>
+                Notar la propiedad <b>providedIn: 'root'</b>, esta propiedad permite inyectar el servicio en un componente sin necesidad de importarlo al modulo principal, aunque se podria hacer. Existen otras formas de inyectar el servicio en un componente
+                pero no seran tratadas aqui.
+            </p>
+            <p>
+                Una vez creado el servicio ya es posible hacer uso de los metodos que este contenga para tratar la informacion necesaria. A continuacion se muestra una imagen de como inyectar el servicio en un componente:
+            </p>
+            <div class="img-zone">
+                <img src="../../assets/img/services2.png" alt="">
+            </div>
+            <p>
+                Se puede observar la obligacion de importar el servicio si se desea hacer uso del mismo. Notar como en el <b>constructor</b> de la clase se inyecta el servicio como privado. Luego el desarrollador podra hacer uso de dicha variable para
+                acceder a los distintos metodos proporcionado por el servicio.
+            </p>
+            <div class="title">
+                <h4>Peticiones HTTP <em>Lo basico de lo basico</em></h4>
+            </div>
+            <p>
+                Anteriormente se menciono que los servicios pueden hacer uso de recursos externos para consulta la informacion. Estos recursos externos pueden ser APIs publicas o un webservice que exponga un API Rest para consumir información.
+            </p>
+            <p>Angular provee al desarrollador un mecanismo sencillo de realizar peticiones HTTP. Para esto Angular hace uso del modulo <b>HttpClientModule</b>, del cliente <b>HttpClient</b> y de los observables de la libreria <b>RxJs</b>. Estos componentes
+                junto con otro llamado <b>INTERCEPTOR</b> proveen al desarrollador lo suficiente para comunicarse con el backend y enviar o consultar información.</p>
+            <p>
+                El modulo <b>HttpClientModule</b> debe ser importado solo en el modulo principal <b>app.module.ts</b>, esto no es necesario para la utilidad <b>HttpClient</b> y la libreria <b>RxJS</b>.
+            </p>
+            <p>A continuacion se muestra una imagen de un servicio creado con los componentes ya creados, incluyendo <b>HttpHeaders</b> el cual sirve para mandar informacion extra a la peticion HTTP.</p>
+            <div class="img-zone">
+                <img src="../../assets/img/services3.png" alt="">
+            </div>
+            <div class="title">
+                <h4>Pipes</h4>
+            </div>
+            <p>
+                Los <b>pipes</b> nos permiten transformar los datos de forma visual. Para indicar a angular que se usara un <b>Pipe</b> se debe usar el simbolo de tuberia <b>('|')</b>. Por lo general se usa por el lado de HTML.
+            </p>
+            <p>
+                Por ejemplo, si queremos transformar un texto a mayusculas, hariamos lo siguiente:
+            </p>
+            <div class="code-zone">
+                <div class="code-title">
+                    <h5>TEXTO A MAYUSCULAS</h5>
+                </div>
+                <div class="code-text" ng-non-bindable>
+                    <span class="prompt">>>></span> texto = <span class="param-value"> 'Hola Mundo'</span><br>
+                    <span class="prompt">>>></span> {{ texto <span class="parameters"> | </span> <span class="reserved-word"> uppercase </span> }}<br>
+                    <span class="prompt">>>></span><span class="parameters"> out: HOLA MUNDO </span>
+                </div>
+            </div>
+            <p>
+                El pipe <b>UPPERCASE</b> es uno de los muchos que existen, a continuacion una lista de algunos pipes y una breve descripción:
+            </p>
+            <div class="table-values">
+                <table>
+                    <tr>
+                        <th>PIPE</th>
+                        <th>Descripcion</th>
+                    </tr>
+                    <tr>
+                        <td>slice</td>
+                        <td>Permite cortar textos, es parecido a la funcion <b>substring</b> en otros lenguajes, tambien trabaja sobre arreglos. Este pipe al igual que otros recibe parametros indicados con dos puntos despues del nombre del pipe.</td>
+                    </tr>
+                    <tr>
+                        <td>decimal</td>
+                        <td>Este pipe nos permite representar cantidades numericas, indicando la cantidad de enteros y decimales.</td>
+                    </tr>
+                    <tr>
+                        <td>uppercase</td>
+                        <td>Permite llevar un texto a mayusculas</td>
+                    </tr>
+                    <tr>
+                        <td>lowercase</td>
+                        <td>Permite llevar un texto a minusculas</td>
+                    </tr>
+                    <tr>
+                        <td>percent</td>
+                        <td>Nos permite transformas cantidades numericas a representaciones porcentuales</td>
+                    </tr>
+                    <tr>
+                        <td>json</td>
+                        <td>Nos permite formatear un objeto de TS a tipo JSON.</td>
+                    </tr>
+                    <tr>
+                        <td>async</td>
+                        <td>Desencadena un valor de una primitiva asincronica. No recibe argumentos. Este pipe debe tomar una expresion de tipo asincronica que puede ser un <b>observable</b> o una <b>promesa</b>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>date</td>
+                        <td>Permite trabajar con fechas.</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </section>
+    <br>
+    <section>
+        <div class="title">
+            <h2>Storage (Local y Sessin Storage)</h2>
+        </div>
+        <hr>
+        <p>
+            Ambos son metodos para el almacenamiento local de información. La diferencia entre Local y Session Storage es que <b>Local Storage</b> mantiene la información almacenada hasta que el navegador del usuario sea cerrada o la aplicación limpie
+            la data. Al contrario <b>Session Storage</b> mantiene la información hasta cerrar la pestaña a la se limpie la data del navegador.
+
+        </p>
+        <p>El uso de Local y Session Storage es identico, en este punto mostraremos el uso basico de LocalStorage. <b>LocalStorage</b> hace uso del objeto <b>localStorage</b> el cual tiene los siguientes metodos para manejar la información: </p>
+        <div class="table-values">
+            <table>
+                <tr>
+                    <th>METODO</th>
+                    <th>DESCRIPCION</th>
+                </tr>
+                <tr>
+                    <td>localStorage.setItem(key, value)</td>
+                    <td>Permite almacenar informacion en local storage, <b>key</b> es el nombre de la variable o dato a almacenar y value, logicamente, es el valor a asignar en dicha variable.</td>
+                </tr>
+                <tr>
+                    <td>localStorage.getItem(key)</td>
+                    <td>A diferencia del anterior, <b>getItem(key)</b> obtiene el valor de una variable almacenada en el localStorage.</td>
+                </tr>
+                <tr>
+                    <td>localStorage.removeItem(key)</td>
+                    <td>Este metodo nos permite remover una variable almacenada en el localStorage, para esto es necesario pasarle el nombre de la variable o key como parametro.</td>
+                </tr>
+                <tr>
+                    <td>localStorage.clear()</td>
+                    <td>Permite limpiar toda la informacion almacenada en el localStorage.</td>
+                </tr>
+            </table>
+        </div>
+        <p>
+            Tambien es posible recorrer todos los valores almacenados en el localStorage o sessionStorage, para esto es usado un bucle <b>for</b> tal como se muestra en la siguiente imagen:
+        </p>
+        <div class="img-zone">
+            <img src="../../assets/img/services4.png" alt="">
+        </div>
+        <p>
+            Hay que tener en cuenta que no todos los navegadores soportan el almacenamiento local de información, para esto se puede añadir el siguiente bloque de codigo para validar si es posible usar localStorage en un navegador:
+        </p>
+        <div class="img-zone">
+            <img src="../../assets/img/services5.png" alt="">
+        </div>
+    </section>
 </div>
